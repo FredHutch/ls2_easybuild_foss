@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 # restated EB dependencies: libc6-dev, unzip, bzip2, xz-utils
 ENV EB_TOOLCHAIN=foss-2016b
 RUN apt-get install -y build-essential && \
-    su -c "source /usr/local/lmod/lmod/init/bash && \
+    su -c "source /app/lmod/lmod/init/bash && \
            module use /app/modules/all && \
            module load EasyBuild && \
            eb -l ${EB_TOOLCHAIN}.eb --robot" - neo && \
