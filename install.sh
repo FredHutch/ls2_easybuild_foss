@@ -3,7 +3,7 @@
 set -x
 set -e
 
-# variables used: EB_NAME, DEPLOY_PREFIX
+# variables used: TOOLCHAIN, DEPLOY_PREFIX
 
 # try to preserve group write here
 umask 002
@@ -16,5 +16,5 @@ module use ${DEPLOY_PREFIX}/modules/all
 module load EasyBuild
 
 # build the easyconfig file
-eb -l ${EB_NAME}.eb --robot
+eb -l ${TOOLCHAIN}.eb --robot
 

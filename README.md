@@ -48,7 +48,7 @@ You will want to have all builder accounts be members of the same group. That gr
 
 Ok, to simple update the software version, run these commands:
 
-1. `docker build . --tag fredhutch/ls2_toolchain:<eb_name> --build-arg EB_NAME=<eb_name>`
+1. `docker build . --tag fredhutch/ls2_toolchain:<eb_name> --build-arg TOOLCHIN=<eb_name>`
 1. `docker push fredhutch/ls2_toolchain:<eb_name>`
 1. `docker run -ti --rm -v /app:/app --user root -e OUT_UID=${UID} OUT_GID=158372 fredhutch/ls2_toolchain:<eb_name> /bin/bash /ls2/deploy.sh`
 

@@ -5,8 +5,8 @@ FROM fredhutch/ls2_easybuild:3.5.1
 # DEPLOY_PREFIX comes from ls2_lmod container, two containers up!
 
 # easyconfig to build - leave '.eb' off
-ARG EB_NAME
-ENV EB_NAME=${EB_NAME}
+ARG TOOLCHAIN
+ENV TOOLCHAIN=${TOOLCHAIN}
 
 # libibverbs required for foss toolchains
 ENV INSTALL_OS_PKGS "awscli libibverbs-dev libc6-dev bzip2 make unzip xz-utils"
@@ -32,7 +32,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     && rm -rf /var/lib/apt/lists/*
 
 # gather installed pkgs list
-RUN dpkg -l > /ls2/installed_pkgs.toolchain
+RUN dpkg -l > /ls2/installed_pkgs.${TOOLCHAIN}
 
 # switch to LS2 user for future actions
 USER ${LS2_USERNAME}
