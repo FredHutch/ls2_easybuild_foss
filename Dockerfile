@@ -1,4 +1,4 @@
-FROM fredhutch/ls2_easybuild:3.5.1
+FROM fredhutch/ls2_easybuild:3.7.0
 
 # Remember the default use is LS2_USERNAME, not root
 
