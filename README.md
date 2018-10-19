@@ -50,6 +50,6 @@ Ok, to simple update the software version, run these commands:
 
 1. `docker build . --tag fredhutch/ls2_toolchain:<eb_name> --build-arg TOOLCHIN=<eb_name>`
 1. `docker push fredhutch/ls2_toolchain:<eb_name>`
-1. `docker run -ti --rm -v /app:/app --user root -e OUT_UID=${UID} OUT_GID=158372 fredhutch/ls2_toolchain:<eb_name> /bin/bash /ls2/deploy.sh`
+1. `docker run -ti --rm -v /app:/app --user root -e OUT_UID=${UID} -e OUT_GID=158372 fredhutch/ls2_easybuild_toolchain:<eb_name> /bin/bash /ls2/deploy.sh`
 
 This runs the successfully built `ls2_toolchain` container with our /app mounted, and then installs the toolchain environment modules as the OUT_UID with group OUT_GID to preserve permissions in /app. It also configures and updates the system cache.
